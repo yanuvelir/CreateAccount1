@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class CrAccInput {
+public class CrAccInput<currentUrl> {
 
     WebDriver driver1 = MainCode.driver;
 
@@ -17,6 +17,9 @@ public class CrAccInput {
 
     WebElement crAccBtn = driver1.findElement(By.xpath
             ("//*[@id=\"__layout\"]/div/div[2]/div/div/div/div[4]/form/button"));
+
+    String currentUrl = driver1.getCurrentUrl();
+
 
     public void CrAccount(String email, String pass) {
 
@@ -34,5 +37,20 @@ public class CrAccInput {
         }
         chkBoxAgree.click();
         crAccBtn.click();
+        String currentUrl = driver1.getCurrentUrl();
+        System.out.println(currentUrl);
+    }
+
+
+    public void CurrentUrl  ( ) {
+        // String currentUrl = driver1.getCurrentUrl();
+
+        driver1.get(this.currentUrl);
+
+        WebElement enterEmailConfCod = driver1.findElement(By.xpath
+                ("//*[@id=\"__layout\"]/div/div[2]/div/div/div/div[2]/div/label/div/input[1]"));
+        enterEmailConfCod.sendKeys();
+
+
     }
 }

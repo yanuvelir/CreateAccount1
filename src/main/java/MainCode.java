@@ -26,11 +26,20 @@ public class MainCode {
         signinButton.click();
 
         CrAccInput crac = new CrAccInput();
+        String currentUrl = null;
         crac.CrAccount("yanautomtest@gmail.com", "Vinnitsa-2022");
 
+        //Запускаем выполнения метода "confirmation". Метод считывания
+        //верификационного кода из Imail
         EmailConfirm imConf = new EmailConfirm();
+        imConf.confirmation();
+
+        //Вставка верификационного кода
+        //imConf.insCodFromImai();
 
         //imConf.confirmation();
+
+        crac.CurrentUrl();
 
     }
 }
