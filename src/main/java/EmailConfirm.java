@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 public class EmailConfirm {
 
     WebDriver driver2 = MainCode.driver;
-    private String CopyedText;
+    public String CopyedText;
 
     // WebElement confCode = driver2.findElement(By.xpath
     // ("///*[@id=\"__layout\"]/div/div[2]/div/div/div/div[2]/div/label/div/input[1]"));

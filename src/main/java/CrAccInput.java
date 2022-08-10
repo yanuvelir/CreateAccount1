@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class CrAccInput<currentUrl> {
+public class CrAccInput extends EmailConfirm{
 
     WebDriver driver1 = MainCode.driver;
 
@@ -21,7 +21,7 @@ public class CrAccInput<currentUrl> {
     String currentUrl = driver1.getCurrentUrl();
 
 
-    public void CrAccount(String email, String pass) {
+    public void CrAccount(String email, String pass) throws InterruptedException {
 
         try {
             Thread.sleep(1500);
@@ -37,20 +37,20 @@ public class CrAccInput<currentUrl> {
         }
         chkBoxAgree.click();
         crAccBtn.click();
+        Thread.sleep(2500);
         String currentUrl = driver1.getCurrentUrl();
+        System.out.println(currentUrl);
         System.out.println(currentUrl);
     }
 
 
-    public void CurrentUrl  ( ) {
-        // String currentUrl = driver1.getCurrentUrl();
-
+    public void CurrentUrl( )
+    {
         driver1.get(this.currentUrl);
 
         WebElement enterEmailConfCod = driver1.findElement(By.xpath
                 ("//*[@id=\"__layout\"]/div/div[2]/div/div/div/div[2]/div/label/div/input[1]"));
-        enterEmailConfCod.sendKeys();
-
+        enterEmailConfCod.sendKeys(CopyedText);
 
     }
 }
