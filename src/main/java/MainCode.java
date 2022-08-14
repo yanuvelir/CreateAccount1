@@ -11,7 +11,7 @@ public class MainCode {
     public static WebDriver driver = new ChromeDriver();
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver2", "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
         // Переход на начальную страницу
         driver.get("https://dex-trade.com/");
@@ -26,7 +26,7 @@ public class MainCode {
         signUpButton.click();
 
         CrAccInput crac = new CrAccInput();
-        crac.CrAccount("yanautomtest@gmail.com", "Vinnitsa-2022");
+        crac.CrAccount("yanautomte.st6@gmail.com", "Vinnitsa-2022");
 
         //Запускаем выполнения метода "confirmation". Метод считывания
         //верификационного кода из Email
@@ -34,7 +34,10 @@ public class MainCode {
         imConf.confirmation();
 
         //Вставка верификационного кода
-        crac.CurrentUrl();
+        //crac.CurrentUrl();
+
+        LogInNewAccount logNewAcc = new LogInNewAccount();
+        logNewAcc.accountLogin();
 
     }
 }
